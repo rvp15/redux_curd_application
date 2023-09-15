@@ -1,24 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-// import {configureStore} from "@reduxjs/toolkit"
-// import { Provider } from 'react-redux'; 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
-// create a variable for the store, create a property called reducer(which contains all the reducers that we are going to use, create a folder called features and have all the reducers in there)
-// const store = configureStore({
-//   reducer:{
-//    todos: todosReducers
-//   }
-// })
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* Pass the store that u have created above*/}
-    
-  <App/>
-   
+    {/* Pass the store, so all components have access to store*/}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
-
