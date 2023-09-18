@@ -9,10 +9,13 @@ const AddNewTodo = () => {
   const onChangeFun = (e) => {
     setValue(e.target.value);
   };
+  const handleInputClick = () =>{
+    setValue('')
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTodo({ title: value }));
+    dispatch(addTodo({ title: value,}));
   };
 
   return (
@@ -24,6 +27,7 @@ const AddNewTodo = () => {
           placeholder="Add New todo..."
           value={value}
           onChange={onChangeFun}
+          onClick={handleInputClick}
         ></input>
 
         <button type="submit" className="btn btn-primary mb-2">

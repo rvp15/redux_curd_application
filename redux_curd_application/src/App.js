@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddNewTodo from './components/AddNewTodo';
 import TodoList from './components/TodoList';
+import CompletedTodos from './components/CompletedTodos';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
      <h1 className='heading'>My Todo List</h1>
      <AddNewTodo/>
      <TodoList/>
+      <CompletedTodos/>
     </div>
   );
 }

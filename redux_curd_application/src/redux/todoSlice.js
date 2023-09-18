@@ -10,18 +10,25 @@ const todoSlice = createSlice({
       const newTodo = {
         id: Date.now(),
         title: action.payload.title,
+        complete: false,
       };
       // now add new todo to the current state:
-      state.push(newTodo);      
+      state.push(newTodo);
     },
-    deleteTodo: (state, action) => {
-       return state.filter((todo) => todo.id !== action.payload.id)
+    deleteTodo: (deletState, action) => {
+      const todos = deletState.filter((todo) => todo.id === action.payload.id);
+      if (todos.length) {
+        todos[0].complete = true;
+      }
     },
+    delTodo: (state,action) =>{
+      return state.filter((x)=>x.id !== action.payload.id)
+    }
   },
 });
 
 // export the reducers as the operation is done based on their actions(todoSlice has bunch of actions)
-export const { addTodo, deleteTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo, delTodo } = todoSlice.actions;
 
 // You need to export this add the reducer in store
 export default todoSlice.reducer;
