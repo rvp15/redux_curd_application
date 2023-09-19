@@ -1,0 +1,11 @@
+.read {
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: 700px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
